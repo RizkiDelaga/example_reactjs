@@ -19,7 +19,7 @@ function App() {
           <Route path="Register" element={<Register />} />
           <Route path="FormOrder" element={<FormOrder />} />
           <Route path="Order" element={<ListOrder />} />
-          <Route path="Order/id" element={<DetailOrder />} />
+          <Route path="Order/:id" element={<DetailOrder />} />
         </Routes>
       </BrowserRouter>
     </Fragment>
