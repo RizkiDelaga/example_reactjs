@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { Fragment } from "react";
+import { Route, Routes } from "react-router";
+import { BrowserRouter } from "react-router-dom";
+import Home from "./pages/Home/Home";
+import FormOrder from "./pages/FormOrder/FormOrder";
+import ListOrder from "./pages/ListOrder/ListOrder";
+import DetailOrder from "./pages/DetailOrder/DetailOrder";
+import Login from "./pages/Auth/Login/Login";
+import Register from "./pages/Auth/Register/Register";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <BrowserRouter>
+        <Routes>
+          <Route path="" element={<Home />} />
+          <Route path="Login" element={<Login />} />
+          <Route path="Register" element={<Register />} />
+          <Route path="FormOrder" element={<FormOrder />} />
+          <Route path="Order" element={<ListOrder />} />
+          <Route path="Order/id" element={<DetailOrder />} />
+        </Routes>
+      </BrowserRouter>
+    </Fragment>
   );
 }
 
